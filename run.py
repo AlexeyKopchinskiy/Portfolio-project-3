@@ -16,4 +16,8 @@ def load_tasks(file_name=TASKS_FILE):
     except (FileNotFoundError, json.JSONDecodeError):
         return []  # Handle empty or invalid data
 
+def save_tasks(file_name=TASKS_FILE, tasks=[]):
+    """Save tasks to the assets directory."""
+    with open(file_name, 'w') as file:
+        json.dump(tasks, file, indent=4)
 
