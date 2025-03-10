@@ -21,3 +21,10 @@ def save_tasks(file_name=TASKS_FILE, tasks=[]):
     with open(file_name, 'w') as file:
         json.dump(tasks, file, indent=4)
 
+# Test the setup
+if __name__ == "__main__":
+    # Initialize with an empty task list
+    tasks = load_tasks()
+    print("Task Manager initialized.")
+    print(f"Loaded tasks: {tasks}")
+    save_tasks(tasks=tasks)
